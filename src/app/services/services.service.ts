@@ -14,29 +14,33 @@ export class ServicesService {
    }
 
    searchMusic(str:string, type='artist') {
-     this.searchUrl = 'https://api.spotify.com/v1/search?query='+str+'&offset=0&limit=20&type='+type+'&market=US';
+     this.searchUrl =
+'https://itunes.apple.com/search?term=' + str + '&offset=0&limit=20&type=' + type + '&market=US';
      return this._http.get(this.searchUrl)
       .map(res => res.json());
   }
 
    getArtist2(id:string) {
-     this.artistUrl = 'https://api.spotify.com/v1/artists/'+id;
+    this.artistUrl = 'https://itunes.apple.com/lookup?id=' + id;
      return this._http.get(this.artistUrl)
        .map(res => res.json());
 
    }
 
    getAlbums(artistId:string){
-    this.albumsUrl = 'https://api.spotify.com/v1/artists/'+artistId+'/albums';
+    this.albumsUrl = 'https://itunes.apple.com/lookup?id=' + artistId + '&entity=album';
      return this._http.get(this.albumsUrl)
        .map(res => res.json());
    }
 
    getAlbum(id:string){
-    this.albumUrl = 'https://api.spotify.com/v1/albums/'+id;
+    this.albumUrl = 'https://itunes.apple.com/lookup?id=' + id + '&entity=album';
      return this._http.get(this.albumUrl)
        .map(res => res.json());
    }
 
 
 }
+
+// https : //itunes.apple.com/lookup?id=909253&entity=album
+

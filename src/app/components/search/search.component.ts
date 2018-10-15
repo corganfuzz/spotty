@@ -18,7 +18,9 @@ export class SearchComponent implements OnInit {
 
     searchMusic() {
      this._servicesService.searchMusic(this.searchStr).subscribe(res => {
-      this.searchRes = res.artists.items;
+
+       this.searchRes = res.results;
+        console.log(this.searchRes[0]);
     });
 
   }

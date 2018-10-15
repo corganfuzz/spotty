@@ -26,13 +26,15 @@ export class ArtistComponent implements OnInit {
       .subscribe((id) => {
         this._servicesService.getArtist2(id)
           .subscribe(artist => {
-            this.artist = artist;
+            console.log(artist);
+            // this.artist = artist;
 
           })
 
         this._servicesService.getAlbums(id)
           .subscribe(albums => {
-            this.albums = albums.items;
+            console.log(albums)
+            // this.albums = albums.items;
           })
 
       });

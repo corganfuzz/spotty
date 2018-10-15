@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/bootswatch/dist/darkly/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
 main {
     border-bottom: #333 1px solid;
     padding: 30px;
@@ -49,3 +53,4 @@ main {
 .play {
     color: #8bba24;
 }
+
